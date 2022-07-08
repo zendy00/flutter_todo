@@ -17,24 +17,15 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -52,11 +43,41 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBGroCosI5BrdH9Of_oZvAq0ycxPVdWJv4',
+    appId: '1:483071714296:web:4fcea656d2fbf94e8fac0d',
+    messagingSenderId: '483071714296',
+    projectId: 'flutter-study-todo',
+    authDomain: 'flutter-study-todo.firebaseapp.com',
+    storageBucket: 'flutter-study-todo.appspot.com',
+    measurementId: 'G-MGXYR2GWS9',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyB668RHStZKSrNafsGJDfIb5M9kQPmjexQ',
     appId: '1:483071714296:android:e1c1191cf20afda28fac0d',
     messagingSenderId: '483071714296',
     projectId: 'flutter-study-todo',
     storageBucket: 'flutter-study-todo.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCMyjNC5VAhyxoj6sF6O8_C9aOUue4kYGk',
+    appId: '1:483071714296:ios:8722fcd9431cc7138fac0d',
+    messagingSenderId: '483071714296',
+    projectId: 'flutter-study-todo',
+    storageBucket: 'flutter-study-todo.appspot.com',
+    iosClientId: '483071714296-st7j8kcfpej1omaof6nlusu4thb24iab.apps.googleusercontent.com',
+    iosBundleId: 'com.example.flutterTodo',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyCMyjNC5VAhyxoj6sF6O8_C9aOUue4kYGk',
+    appId: '1:483071714296:ios:8722fcd9431cc7138fac0d',
+    messagingSenderId: '483071714296',
+    projectId: 'flutter-study-todo',
+    storageBucket: 'flutter-study-todo.appspot.com',
+    iosClientId: '483071714296-st7j8kcfpej1omaof6nlusu4thb24iab.apps.googleusercontent.com',
+    iosBundleId: 'com.example.flutterTodo',
   );
 }
