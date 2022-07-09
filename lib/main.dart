@@ -3,6 +3,8 @@ import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_todo/screens/splash_screen.dart';
 
+// newsapi.org api key : 675373411a2240b7bd3f33643642faaf
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(

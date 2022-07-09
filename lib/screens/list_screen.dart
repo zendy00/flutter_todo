@@ -7,6 +7,7 @@ import 'package:flutter_todo/models/todo.dart';
 import 'package:flutter_todo/providers/todo_default.dart';
 import 'package:flutter_todo/providers/todo_firebase.dart';
 import 'package:flutter_todo/providers/todo_sqlite.dart';
+import 'package:flutter_todo/screens/news_screen.dart';
 
 class ListScreen extends StatefulWidget {
   ListScreen({Key? key}) : super(key: key);
@@ -49,7 +50,11 @@ class _ListScreenState extends State<ListScreen> {
                 title: Text('할 일 목록 앱'),
                 actions: [
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => NewsScreen(),
+                      ));
+                    },
                     child: Container(
                         padding: EdgeInsets.all(5),
                         child: Column(
