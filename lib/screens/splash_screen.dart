@@ -36,6 +36,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<bool> checkLogin() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    // todo : 로그아웃 처리
+    prefs.setBool('isLogin', false);
     bool isLogin = prefs.getBool('isLogin') ?? false;
     log("[*] isLogin : $isLogin");
     return isLogin;
